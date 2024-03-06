@@ -3,8 +3,18 @@ layout: layout.liquid
 title: 11ty Boilerplate
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-
-<div x-data="{hello_world: $fetchjson('https://dummyjson.com/products/1', jsonItem='thumbnail')}">
-
+<div class="relative flex flex-col h-screen bg-gray-500 justify-center">
+    <div class="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 divide-y-4 divide-blue-200">
+        <div class="text-center text-4xl">
+            <h1>Your <strong class="text-blue-700">NEW</strong> phone</h1>
+        </div>
+        <div class="flex flex-row divide-x-4 divide-blue-200 p-5 text-2xl">
+            <div class="p-5" x-data="{title: $fetchjson('https://dummyjson.com/products/1', jsonItem='title')}">
+                <p x-text="title"></p>
+            </div>
+            <div class="p-5 font-extrabold text-blue-700 text-2xl" x-data="{rating: $fetchjson('https://dummyjson.com/products/1', jsonItem='rating')}">
+                <p x-text="rating"></p>
+            </div>
+        </div>
+    </div>
 </div>
